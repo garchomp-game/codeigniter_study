@@ -49,6 +49,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
+$route['default_controller'] = /* localhost:0000/ */'index.php/';
+// ここでデフォルトのルーティングを変更しておくことで、以後省略して書くことも可能。
+/* また、このルーティングの設定、フォルダの階層は、プロジェクトによってもまちまちであるため、基本的には柔軟に対応することが求められるが、学習中のうちはrailsの思想にのっとったフォルダ階層で学習を進めていく。
+
+*/
+$route['(:any)'] = 'pages/view/$1';
